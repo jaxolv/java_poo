@@ -40,15 +40,19 @@ public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Product tv = new Product();
-
+        
         System.out.println("Enter product data:");
         System.out.print("Name: ");
-        tv.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.print("Price: ");
-        tv.price = sc.nextDouble();
-        System.out.print("Quantity in stock: ");
-        tv.quantity = sc.nextInt();
+        double price = sc.nextDouble();
+        Product tv = new Product(name, price);
+
+        tv.setName("PC");
+        System.out.println("Updated name: " + tv.getName());
+        tv.setPrice(1200.00);
+        System.out.println("Updated price: " + tv.getPrice());
+        System.out.println("Quantity: " + tv.getQuantity());
 
         System.out.printf("Product data: %s%n", tv.toString());
         
